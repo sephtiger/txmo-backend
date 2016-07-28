@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
-from flask.ext.heroku import Heroku
+from flask_heroku import Heroku
 from flask_restful import Api, Resource
-from settings import DevConfig
+from settings import ProdConfig
 from models import db, Company, Transaction
 
 app = Flask(__name__)
