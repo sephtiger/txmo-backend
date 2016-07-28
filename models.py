@@ -1,6 +1,10 @@
+from flask import Flask
+from settings import ProdConfig
 from flask_sqlalchemy import SQLAlchemy
 
-db = SQLAlchemy()
+app = Flask(__name__)
+db = SQLAlchemy(app)
+app.config.from_object(ProdConfig)
 
 # Create our database model
 class Company(db.Model):

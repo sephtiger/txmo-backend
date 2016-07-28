@@ -5,9 +5,9 @@ from settings import ProdConfig
 from models import db, Company, Transaction
 
 app = Flask(__name__)
+config = ProdConfig
 heroku = Heroku(app)
-app.config.from_object(ProdConfig)
-db.init_app(app)
+app.config.from_object(config)
 api = Api(app)
 
 class CompanyApi(Resource):

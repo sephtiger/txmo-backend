@@ -1,5 +1,3 @@
-import os
-
 class Config(object):
    """Base configuration."""
    BCRYPT_LOG_ROUNDS = 13
