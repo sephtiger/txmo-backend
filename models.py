@@ -1,9 +1,11 @@
 from flask import Flask
 from settings import ProdConfig
 from flask_sqlalchemy import SQLAlchemy
+from flask_heroku import Heroku
 
 app = Flask(__name__)
 app.config.from_object(ProdConfig)
+heroku = Heroku(app)
 db = SQLAlchemy(app)
 
 

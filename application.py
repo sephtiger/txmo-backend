@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-from flask_heroku import Heroku
 from flask_restful import Api, Resource
 from settings import ProdConfig
 from models import db, Company, Transaction
@@ -8,7 +7,6 @@ app = Flask(__name__)
 config = ProdConfig
 app.config.from_object(config)
 
-heroku = Heroku(app)
 api = Api(app)
 
 class CompanyApi(Resource):
